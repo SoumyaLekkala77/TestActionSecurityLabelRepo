@@ -1,0 +1,30 @@
+name: Create Pull Request
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_pull_request:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Git user
+      run: |
+        git config --global user.name "Soumya Lekkala"
+        git config --global user.email "soumyalekkala77@gmail.com"
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        title: Automated Pull Request
+        branch: featureFix
+        body: |
+          This pull request was automatically created by a GitHub Actions workflow.
+        commit-message: Automated commit message
+        labels: auto-generated
+        reviewers: Soumya Lekkala
