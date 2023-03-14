@@ -21,7 +21,8 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
       with:
-        title: Automated Pull Request         
+        title: Automated Pull Request
+        branch: feature1
         body: |
           This pull request was automatically created by a GitHub Actions workflow.
         commit-message: Automated commit message
