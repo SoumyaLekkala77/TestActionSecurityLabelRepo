@@ -22,7 +22,7 @@ jobs:
       uses: peter-evans/create-pull-request@v3
       with:
         title: Automated Pull Request
-        branch: featureFix
+        branch: feature1
         body: |
           This pull request was automatically created by a GitHub Actions workflow.
         commit-message: Automated commit message
