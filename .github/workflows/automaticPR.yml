@@ -27,3 +27,4 @@ jobs:
         commit-message: Automated commit message
         labels: auto-generated
         reviewers: Soumya Lekkala
+        token: ${{ secrets.PAT }}
