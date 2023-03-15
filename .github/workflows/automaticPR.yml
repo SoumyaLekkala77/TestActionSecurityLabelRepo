@@ -12,19 +12,19 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    
+    - name: Extract commit data
+      uses: rlespinasse/git-commit-data-action@v1
 
-    - name: Set up Git user
-      run: |
-        git config --global user.name "Soumya Lekkala"
-        git config --global user.email "soumyalekkala77@gmail.com"
-
-    - name: Create Pull Request
+    - name: Raise Pull Request
       uses: peter-evans/create-pull-request@v3
       with:
-        title: Automated Pull Request
-        body: |
+        branch: "auto-pr-branch"
+        base: main
+        title: "Automated Pull Request"
+        committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL}}">
+        author: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL}}">  
+        body: 
           This pull request was automatically created by a GitHub Actions workflow.
-        commit-message: Automated commit message
-        labels: auto-generated
-        reviewers: Soumya Lekkala
-        token: ${{ secrets.PAT }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        delete-branch: true
