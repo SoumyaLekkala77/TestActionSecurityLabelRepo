@@ -1,7 +1,5 @@
 Hey there, Welcome!
-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
-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
-Test PR1
+Test Auto PR 1
 <<<<<<< HEAD
 Test PR123
 =======

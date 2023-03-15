@@ -26,5 +26,5 @@ jobs:
         author: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL}}">  
         body: 
           This pull request was automatically created by a GitHub Actions workflow.
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.PAT }}
         delete-branch: true
